@@ -1,12 +1,12 @@
-# Full configuration options can be found at https://www.nomadproject.io/docs/configuration
-
-data_dir = "/opt/nomad/data"
+datacenter = "house"
 bind_addr = "{{ GetInterfaceIP \"eth1\" }}"
-
-server {
-  enabled = true
-}
+data_dir = "/opt/nomad/data"
 
 client {
   enabled = true
+}
+
+server {
+  enabled = true
+  bootstrap_expect = 1
 }

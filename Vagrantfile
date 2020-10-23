@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
     s.vm.network "private_network", ip: "192.168.222.22"
     s.vm.network :forwarded_port, host: 22222, guest: 22, id: "ssh"
     s.vm.provision "file", source: "consul-server.hcl", destination: "/tmp/consul.hcl"
+    s.vm.provision "file", source: "nomad-server.hcl", destination: "/tmp/nomad.hcl"
     s.vm.provision "shell", path: "provision-after.sh"
   end
 
@@ -21,6 +22,7 @@ Vagrant.configure("2") do |config|
     s.vm.network "private_network", ip: "192.168.222.23"
     s.vm.network :forwarded_port, host: 22223, guest: 22, id: "ssh"
     s.vm.provision "file", source: "consul-client.hcl", destination: "/tmp/consul.hcl"
+    s.vm.provision "file", source: "nomad-client.hcl", destination: "/tmp/nomad.hcl"
     s.vm.provision "shell", path: "provision-after.sh"
   end
 end

@@ -1,6 +1,6 @@
-data_dir = "/opt/consul"
+datacenter = "house"
 bind_addr = "{{ GetInterfaceIP \"eth1\" }}"
-datacenter = "inhouse"
+data_dir = "/opt/consul"
 
 client_addr = "0.0.0.0"
 
