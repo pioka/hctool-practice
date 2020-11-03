@@ -18,7 +18,7 @@ gpasswd -a vagrant docker
 
 
 # CNIプラグインをインストール & ブリッジ有効化
-curl -qLo /tmp/cni-plugins.tgz https://github.com/containernetworking/plugins/releases/download/v0.8.6/cni-plugins-linux-amd64-v0.8.6.tgz
+curl -sLo /tmp/cni-plugins.tgz https://github.com/containernetworking/plugins/releases/download/v0.8.6/cni-plugins-linux-amd64-v0.8.6.tgz
 mkdir -p /opt/cni/bin
 tar -C /opt/cni/bin -xzf /tmp/cni-plugins.tgz
 
